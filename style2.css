@@ -1,0 +1,311 @@
+/* ==========================================================================
+   Editorial & Executive Portfolio Stylesheet - Classic, Refined & Typographic
+   ========================================================================== */
+
+:root {
+    --font-serif: "Charter", "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    
+    /* Warm, high-end editorial palette (Bordeaux / Warm Linen) */
+    --color-bg: #f9f8f5;
+    --color-surface: #ffffff;
+    --color-text-primary: #1c1917;
+    --color-text-secondary: #57534e;
+    --color-text-muted: #78716c;
+    --color-accent: #722f37; /* Wine / Bordeaux */
+    --color-accent-hover: #541d24;
+    --color-accent-subtle: #fbf5f5;
+    --color-border: #e7e5e4;
+    --color-border-dark: #a8a29e;
+    
+    --shadow-soft: 0 4px 20px -2px rgba(28, 25, 23, 0.05);
+    --transition: all 0.25s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #12100e;
+        --color-surface: #1c1917;
+        --color-text-primary: #f5f5f4;
+        --color-text-secondary: #d6d3d1;
+        --color-text-muted: #a8a29e;
+        --color-accent: #f43f5e;
+        --color-accent-hover: #fb7185;
+        --color-accent-subtle: #2b1419;
+        --color-border: #292524;
+        --color-border-dark: #44403c;
+        --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+    }
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    line-height: 1.65;
+    padding: 3.5rem 1.5rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Document Container */
+body > header,
+body > main {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--color-surface);
+    padding: 3rem 3.5rem;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-soft);
+}
+
+body > header {
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 2rem;
+    text-align: left;
+}
+
+body > hr {
+    display: none;
+}
+
+body > main {
+    border-top: none;
+    padding-top: 2rem;
+}
+
+/* Header & Masthead */
+header h1 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--color-text-primary);
+    line-height: 1.15;
+    margin-bottom: 0.85rem;
+}
+
+header p {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+}
+
+header a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+header a:hover {
+    color: var(--color-accent-hover);
+    text-decoration-thickness: 2px;
+}
+
+/* Section Styling */
+section {
+    margin-bottom: 2.75rem;
+}
+
+section:last-of-type {
+    margin-bottom: 1rem;
+}
+
+section h2 {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+section h2::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 48px;
+    height: 2px;
+    background-color: var(--color-accent);
+}
+
+main hr {
+    border: 0;
+    height: 1px;
+    background: var(--color-border);
+    margin: 2.5rem 0;
+}
+
+/* Professional Summary */
+#professional-summary p {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    padding: 0 1rem;
+    border-left: 2px solid var(--color-accent);
+}
+
+/* Core Competencies */
+#core-competencies ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#core-competencies li {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    padding-bottom: 0.75rem;
+    border-bottom: 1px dashed var(--color-border);
+    line-height: 1.6;
+}
+
+#core-competencies li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+#core-competencies li strong {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-right: 0.5rem;
+}
+
+/* Experience & Education */
+#professional-experience, #education {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+}
+
+article {
+    position: relative;
+}
+
+article h3 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.2rem;
+}
+
+article > p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.9rem;
+    letter-spacing: 0.01em;
+}
+
+article > p strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
+}
+
+article ul {
+    list-style-type: square;
+    padding-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+article ul li {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+}
+
+article ul li::marker {
+    color: var(--color-accent);
+}
+
+/* Education Details */
+#education article p {
+    font-style: italic;
+    color: var(--color-text-secondary);
+    margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 680px) {
+    body {
+        padding: 1.25rem 0.5rem;
+    }
+
+    body > header,
+    body > main {
+        padding: 1.75rem 1.25rem;
+    }
+
+    header h1 {
+        font-size: 1.9rem;
+    }
+
+    header p {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+    }
+
+    #professional-summary p {
+        padding: 0 0.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: #ffffff;
+        color: #000000;
+        padding: 0;
+    }
+
+    body > header,
+    body > main {
+        max-width: 100%;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    section h2 {
+        border-bottom: 1px solid #000000;
+        color: #000000;
+    }
+
+    section h2::after {
+        display: none;
+    }
+
+    article ul li::marker {
+        color: #000000;
+    }
+}

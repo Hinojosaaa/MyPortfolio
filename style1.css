@@ -1,0 +1,335 @@
+/* ==========================================================================
+   Portfolio Resume Stylesheet - Modern, Clean & Responsive
+   ========================================================================== */
+
+:root {
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --color-bg: #f8fafc;
+    --color-surface: #ffffff;
+    --color-text-primary: #0f172a;
+    --color-text-secondary: #475569;
+    --color-text-muted: #64748b;
+    --color-accent: #0284c7;
+    --color-accent-hover: #0369a1;
+    --color-accent-subtle: #f0f9ff;
+    --color-border: #e2e8f0;
+    --color-divider: #cbd5e1;
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+    --transition: all 0.2s ease-in-out;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #090d16;
+        --color-surface: #111827;
+        --color-text-primary: #f9fafb;
+        --color-text-secondary: #cbd5e1;
+        --color-text-muted: #94a3b8;
+        --color-accent: #38bdf8;
+        --color-accent-hover: #7dd3fc;
+        --color-accent-subtle: #0c2135;
+        --color-border: #1f2937;
+        --color-divider: #374151;
+        --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+        --shadow-md: 0 4px 8px -1px rgba(0, 0, 0, 0.5);
+    }
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    padding: 2.5rem 1.25rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Card Container Structure */
+body > header,
+body > main {
+    max-width: 820px;
+    margin: 0 auto;
+    background-color: var(--color-surface);
+    padding: 2.25rem 2.5rem;
+    border-left: 1px solid var(--color-border);
+    border-right: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+}
+
+body > header {
+    border-top: 1px solid var(--color-border);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding-bottom: 1.75rem;
+    text-align: center;
+}
+
+body > hr {
+    display: none; /* Hide raw HRs separating header and main in favor of card wrapper flow */
+}
+
+body > main {
+    border-bottom: 1px solid var(--color-border);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    padding-top: 0.5rem;
+}
+
+/* Header & Contact Styling */
+header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--color-text-primary);
+    margin-bottom: 0.75rem;
+}
+
+header p {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+}
+
+header a {
+    color: var(--color-accent);
+    text-decoration: none;
+    background: var(--color-accent-subtle);
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    font-weight: 500;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+header a:hover {
+    background: var(--color-accent);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Section Headings */
+section {
+    margin-bottom: 2.25rem;
+}
+
+section:last-of-type {
+    margin-bottom: 0.75rem;
+}
+
+section h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+section h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--color-border);
+}
+
+/* Inner Dividers */
+main hr {
+    border: 0;
+    height: 1px;
+    background: var(--color-border);
+    margin: 2.25rem 0;
+}
+
+/* Professional Summary Highlight Box */
+#professional-summary p {
+    font-size: 1.025rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    background: var(--color-accent-subtle);
+    padding: 1.25rem 1.5rem;
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+/* Core Competencies */
+#core-competencies ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+#core-competencies li {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: 0.85rem 1.25rem;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+#core-competencies li strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
+    margin-right: 0.35rem;
+}
+
+/* Professional Experience & Education Articles */
+#professional-experience, #education {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+article {
+    background: var(--color-surface);
+    border-left: 2px solid var(--color-border);
+    padding-left: 1.25rem;
+    transition: var(--transition);
+}
+
+article:hover {
+    border-left-color: var(--color-accent);
+}
+
+article h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.25rem;
+}
+
+article > p {
+    font-size: 0.925rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.85rem;
+}
+
+article > p strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
+}
+
+article ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+article ul li {
+    position: relative;
+    padding-left: 1.25rem;
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+article ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+/* Education Specific */
+#education article {
+    margin-bottom: 0;
+}
+
+#education article p {
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 640px) {
+    body {
+        padding: 1rem 0.5rem;
+    }
+    
+    body > header,
+    body > main {
+        padding: 1.5rem 1.25rem;
+    }
+    
+    header h1 {
+        font-size: 1.75rem;
+    }
+    
+    header p {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    #professional-summary p {
+        padding: 1rem;
+    }
+}
+
+/* Print Optimization */
+@media print {
+    body {
+        background: #ffffff;
+        color: #000000;
+        padding: 0;
+    }
+    
+    body > header,
+    body > main {
+        max-width: 100%;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    header a {
+        background: none;
+        border: none;
+        color: #000000;
+        text-decoration: underline;
+        padding: 0;
+    }
+    
+    #professional-summary p {
+        background: none;
+        border-left: 2px solid #000000;
+        padding: 0.5rem 0.75rem;
+    }
+    
+    #core-competencies li {
+        background: none;
+        border: none;
+        padding: 0.25rem 0;
+    }
+    
+    article {
+        border-left: none;
+        padding-left: 0;
+        page-break-inside: avoid;
+    }
+    
+    section h2::after {
+        background: #000000;
+    }
+}
